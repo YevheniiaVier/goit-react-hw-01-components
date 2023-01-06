@@ -9,14 +9,17 @@ import {
 } from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
-  // const statsNormilized = stats.reduce((acc, stat) => {
-  //   console.log(acc);
-  //   return {
-  //     ...acc,
-      
-    
-  //   };
-  // }, {});
+  const result = [];
+
+  stats.reduce(function (res, stat) {
+    if (!res[stat.label]) {
+      res[stat.label] = { id: stat.id, label: stat.label, percentage: 0 };
+      result.push(res[stat.label]);
+    }
+    res[stat.label].percentage += stat.percentage;
+    return res;
+  }, {});
+  console.log(result);
   return (
     <ProfileStatistic>
       {title && <StatTitle>{title}</StatTitle>}

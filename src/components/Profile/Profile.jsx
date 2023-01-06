@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import defaultUserImg from 'default.png';
 
-// import { imgSize } from '../../constants';
 import {
   ProfileCard,
   CardInfo,
