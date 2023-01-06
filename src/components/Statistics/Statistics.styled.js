@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { getRandomHexColor } from 'utils';
 
 export const ProfileStatistic = styled.section`
-  grid-area: statistics;
   padding-top: ${p => p.theme.space[5]}px;
   width: 360px;
   display: flex;
@@ -23,8 +22,8 @@ export const StatList = styled.ul`
   width: 100%;
   height: 75px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: 1fr;
 
   color: ${p => p.theme.colors.white};
 `;

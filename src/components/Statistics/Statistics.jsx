@@ -10,7 +10,6 @@ import {
 
 export const Statistics = ({ title, stats }) => {
   const result = [];
-
   stats.reduce(function (res, stat) {
     if (!res[stat.label]) {
       res[stat.label] = { id: stat.id, label: stat.label, percentage: 0 };
@@ -19,15 +18,13 @@ export const Statistics = ({ title, stats }) => {
     res[stat.label].percentage += stat.percentage;
     return res;
   }, {});
-  console.log(result);
   return (
     <ProfileStatistic>
       {title && <StatTitle>{title}</StatTitle>}
 
       <StatList>
-        {stats.map(stat => (
+        {result.map(stat => (
           <StatItem key={stat.id} label={stat.label}>
-            {/* {console.log(StatItem.props)} */}
             <StatLabel>{stat.label}</StatLabel>
             <StatPercentage>{stat.percentage}%</StatPercentage>
           </StatItem>
