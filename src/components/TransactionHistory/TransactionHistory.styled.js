@@ -3,12 +3,10 @@ import styled from 'styled-components';
 export const Transactions = styled.table`
   grid-area: transactions;
   border-collapse: collapse;
-  width: 100%;
+  max-width: 600px;
   font-family: ${p => p.theme.fonts.heading};
 `;
-export const TableTitle = styled.thead`
-  color: 'orange';
-`;
+export const TableTitle = styled.thead``;
 
 export const TableRow = styled.tr`
   :nth-child(even) {
@@ -26,14 +24,12 @@ export const TableHeading = styled.th`
   color: ${p => p.theme.colors.background};
 `;
 
-export const TableBody = styled.tbody`
-  color: 'red';
-`;
+export const TableBody = styled.tbody``;
 
 export const TableData = styled.td`
   border: ${p => `${p.theme.borders.normal}${p.theme.colors.secondary}`};
   text-transform: capitalize;
-  padding: ${p => p.theme.space[3]}px;
+  padding: ${p => p.theme.space[2]}px;
   text-align: center;
   color: ${p => p.theme.colors.secondary};
 `;
