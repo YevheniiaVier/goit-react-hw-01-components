@@ -10,9 +10,12 @@ export const Friend = styled.li`
   box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
     0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
   border-radius: ${p => p.theme.radii.big};
-  transition: transform 300ms 100ms;
+  transition: background-color 300ms 100ms;
   :hover {
-    transform: scale(1.03);
+    background-color: ${p => p.theme.colors.grey};
+    p {
+      color: ${p => p.theme.colors.accent};
+    }
   }
 `;
 export const FriendStatus = styled.span`
@@ -37,5 +40,8 @@ export const FriendImg = styled.img.attrs(props => ({
   }};
 `;
 export const FriendName = styled.p`
-  color: 'brown';
+  color: ${p => p.theme.colors.secondary};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  font-size: ${p => p.theme.fontSizes.l};
+  transition: color 300ms 100ms;
 `;
